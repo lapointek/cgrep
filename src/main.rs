@@ -1,7 +1,17 @@
-fn main() {
-    // get arguments at index 1 and 2, index 0 is the tool name cgrep
-    let pattern = std::env::args().nth(1).expect("no pattern given");
-    let path = std::env::args().nth(2).expect("no path given");
+use clap::Parser;
 
-    println!("pattern: {:?}, path: {:?}", pattern, path)
+// Search for a pattern and display the lines
+#[derive(Parser)]
+struct Cli {
+    // Pattern to look for in file
+    pattern: String,
+    // Read file path
+    path: std::path::PathBuf,
+}
+
+fn main() {
+    // Parse into the Cli struct
+    let args = Cli::parse();
+
+    println!("pattern: {:?}, path: {:?}", args.pattern, args.path)
 }
