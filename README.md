@@ -2,6 +2,8 @@
 
 A fast, efficient, and easy-to-use command-line search tool built in Rust. Supports pattern matching, file searching, and colored output for enhanced readability.
 
+![Rust CLI Tool](https://github.com/lapointek/cgrep/blob/main/images/cgrep.png?raw=true)
+
 ## Installation
 
 ### From source
