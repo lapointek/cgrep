@@ -2,6 +2,7 @@ use crate::find_matches::search_file;
 use clap::Parser;
 mod find_matches;
 use anyhow::Result;
+use owo_colors::OwoColorize;
 
 // Search for a pattern and display the lines
 #[derive(Parser)]
@@ -18,7 +19,7 @@ fn main() -> Result<()> {
     let matches = search_file(&args.path, &args.pattern);
 
     if let Ok(line) = matches {
-        println!("{}", line.join("\n"));
+        println!("{}", line.join("\n").bright_cyan());
     }
 
     Ok(())
