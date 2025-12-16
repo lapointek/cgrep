@@ -18,7 +18,7 @@ fn main() -> Result<()> {
     let matches = search_file(&args.path, &args.pattern);
 
     if let Ok(line) = matches {
-        println!("{:?}", line);
+        println!("{:?}\n", line);
     }
 
     Ok(())
